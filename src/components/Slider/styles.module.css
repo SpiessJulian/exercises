@@ -1,0 +1,21 @@
+.sliderThumb {
+	position: absolute;
+	background-color: gray;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	top: -3px;
+	touch-action: none;
+	transition: all 0.2s;
+    background-color: rgb(74, 74, 254);
+    z-index: 9;
+}
+
+.sliderThumb:hover {
+	height: 30px;
+	width: 30px;
+	margin-top: -5px;
+	margin-left: -5px;
+    cursor: pointer;
+}
+
