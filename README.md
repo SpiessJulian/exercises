@@ -1,5 +1,7 @@
-## React exercises for MANGO interview process
+# React exercises for MANGO interview process
 
+
+## Description
 This are the two exercises, for the MANGO interview process.
 
 The exercise consist of a custom drag and drop slider for selecting price ranges. The first one accepts a minimum and maximum value. The second one accepts an array of the fixed available values.
