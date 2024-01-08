@@ -12,10 +12,6 @@ const SecondExercise = ({ availableValues = [] }) => {
 
 	const [scaleBlocks, setScaleBlocks] = useState([]);
 	const [sliderBlocks, setSliderBlocks] = useState([]);
-	const [startEditValue, setStartEditValue] = useState(MIN_VALUE);
-	const [endEditValue, setEndEditValue] = useState(MAX_VALUE);
-	const [startEdit, setStartEdit] = useState(false);
-	const [endEdit, setEndEdit] = useState(false);
 	const [start, setStart] = useState(MIN_VALUE);
 	const [end, setEnd] = useState(MAX_VALUE);
 	const [currentSlider, setCurrentSlider] = useState(null);
@@ -118,83 +114,22 @@ const SecondExercise = ({ availableValues = [] }) => {
 		setSliderBlocks(slider);
 	}, [start, end, currentSlider, availableValues]);
 
-	const handleStartEditMinValue = () => {
-		setStartEditValue(start);
-		setStartEdit(true);
-	};
-
-	const handleEndEditMinValue = (e) => {
-		e.preventDefault();
-		if (
-			isNaN(startEditValue) ||
-			startEditValue > end ||
-			startEditValue < MIN_VALUE ||
-			!availableValues.includes(startEditValue)
-		)
-			return setStartEdit(false);
-		setStart(startEditValue);
-		setStartEdit(false);
-	};
-
-	const handleStartEditMaxValue = () => {
-		setEndEditValue(end);
-		setEndEdit(true);
-	};
-
-	const handleEndEditMaxValue = (e) => {
-		e.preventDefault();
-		if (
-			isNaN(endEditValue) ||
-			endEditValue < start ||
-			endEditValue > MAX_VALUE ||
-			!availableValues.includes(endEditValue)
-		)
-			return setEndEdit(false);
-		setEnd(endEditValue);
-		setEndEdit(false);
-	};
 
 	return (
 		<div>
 			<h1>Second Exercise</h1>
 
 			<div className={styles.example}>
-				<form
-					onClick={handleStartEditMinValue}
-					onSubmit={handleEndEditMinValue}
-				>
-					{startEdit ? (
-						<input
-							role="textbox"
-							type="number"
-							value={startEditValue}
-							onChange={(e) =>
-								setStartEditValue(Number(e.target.value))
-							}
-						/>
-					) : (
-						`$${start}`
-					)}
-				</form>
+				<h3>
+					${start}
+				</h3>
 				<div className={styles.sliderContainer}>
 					<div className={styles.sliderScale}>{scaleBlocks}</div>
 					<div className={styles.slider}>{sliderBlocks}</div>
 				</div>
-				<form
-					onClick={handleStartEditMaxValue}
-					onSubmit={handleEndEditMaxValue}
-				>
-					{endEdit ? (
-						<input
-							role="textbox"
-							type="number"
-							value={endEditValue}
-							onChange={(e) => setEndEditValue(Number(e.target.value))}
-						/>
-					) : (
-						`$${end}`
-					)}
-				</form>
+				<h3>
+					${end}
+				</h3>
 			</div>
 		</div>
 	);
