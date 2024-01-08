@@ -130,7 +130,7 @@ const FirstExercise = ({ minValue, maxValue }) => {
 		<div>
 			<h1>First Exercise</h1>
 
-			<div className={styles.example}>
+			<div className={styles.container}>
 				<form
 					onClick={handleStartEditMinValue}
 					onSubmit={handleEndEditMinValue}

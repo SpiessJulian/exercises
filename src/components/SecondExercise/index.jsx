@@ -119,7 +119,7 @@ const SecondExercise = ({ availableValues = [] }) => {
 		<div>
 			<h1>Second Exercise</h1>
 
-			<div className={styles.example}>
+			<div className={styles.container}>
 				<h3>
 					${start}
 				</h3>

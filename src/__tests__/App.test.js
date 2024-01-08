@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import * as api from '../utils/api.js';
 import App from '../App.jsx';
 
@@ -13,5 +13,11 @@ describe('App', () => {
 
         await waitFor(() => expect(api.getMinMaxValues).toHaveBeenCalledTimes(1));
         await waitFor(() => expect(api.getFixedValues).toHaveBeenCalledTimes(1));
+    });
+
+    it('should show a loading message while loading for the APIs responses', () => {
+        render(<App/>);
+
+        expect(screen.getByText('Loading...')).toBeInTheDocument();
     });
 });
