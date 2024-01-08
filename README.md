@@ -7,9 +7,9 @@ The exercise consist of a custom drag and drop slider for selecting price ranges
 ## SETUP
 with nodejs and npm installed.
 just run `npm i`.
-To start the application just run: `npm start`. It will redirect you to http://localhost:5050/
+To start the application just run: `npm start`. It will redirect you to http://localhost:8080/
 The first exercise will be displayed on any route except the one for exercise two.
-In order to see the second exercise, just change the URL for http://localhost:5050/exercise2.
+In order to see the second exercise, just change the URL for http://localhost:8080/exercise2.
 
 ## Author
 David Julian Spiess
