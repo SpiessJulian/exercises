@@ -8,7 +8,7 @@ export const getMinMaxValues = async () => {
     } catch (error) {
         return { min: 10, max: 50 };
     }
-}
+};
 
 
 export const getFixedValues = async () => {
@@ -21,4 +21,4 @@ export const getFixedValues = async () => {
     } catch (error) {
         return [10, 20, 30, 40, 50, 60, 70];
     }
-}
+};
