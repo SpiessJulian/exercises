@@ -9,12 +9,15 @@ The exercise consist of a custom drag and drop slider for selecting price ranges
 ## SETUP
 With nodejs and npm installed.
 just run `npm i`.
+To also setup the end-to-end tests run `npx playwright install`.
 To start the application just run: `npm start`. It will redirect you to http://localhost:8080/
 The first exercise will be displayed on any route except the one for exercise two.
 In order to see the second exercise, just change the URL for http://localhost:8080/exercise2.
 
 ## TEST
 In order to run the Unit Tests, just run `npm run test` and all test suites will run.
+
+To run the end-to-end tests, just run `npx playwright test`.
 
 ## Author
 David Julian Spiess
