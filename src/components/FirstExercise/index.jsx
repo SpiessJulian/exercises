@@ -3,7 +3,6 @@ import clsx from "clsx";
 import Slider from "../Slider";
 import styles from "./styles.module.css";
 
-const UNIT = 15;
 
 const FirstExercise = ({ minValue, maxValue }) => {
 	const MIN_VALUE = minValue;
@@ -48,6 +47,8 @@ const FirstExercise = ({ minValue, maxValue }) => {
 		const slider = [];
 		let minThumb = null;
 		let maxThumb = null;
+		const { innerWidth } = window;
+		const UNIT = innerWidth * 0.01;
 
 		for (let i = MIN_VALUE; i <= MAX_VALUE; i++) {
 			let label = "";
@@ -85,6 +86,7 @@ const FirstExercise = ({ minValue, maxValue }) => {
 					data-testid={i}
 					data-slot={i}
 					onDragOver={onDragOver}
+					onTouchMove={() => null}
 					onTouchEnd={onDrop}
 					onDrop={onDrop}
 					key={i}

@@ -19,6 +19,6 @@ export const getFixedValues = async () => {
     
         return data;   
     } catch (error) {
-        return [10, 20, 30, 40, 50, 60, 70];
+        return [1.99, 5.99, 10.99, 30.99, 50.99, 70.99];
     }
 };

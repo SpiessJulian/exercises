@@ -15,9 +15,9 @@ describe('App', () => {
         await waitFor(() => expect(api.getFixedValues).toHaveBeenCalledTimes(1));
     });
 
-    it('should show a loading message while loading for the APIs responses', () => {
+    it('should show a loading message while loading for the APIs responses', async () => {
         render(<App/>);
 
-        expect(screen.getByText('Loading...')).toBeInTheDocument();
+        await waitFor(() => expect(screen.getByText('Loading...')).toBeInTheDocument());
     });
 });

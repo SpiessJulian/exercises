@@ -3,8 +3,6 @@ import clsx from "clsx";
 import Slider from "../Slider";
 import styles from "./styles.module.css";
 
-const UNIT = 10;
-
 const SecondExercise = ({ availableValues = [] }) => {
 	const N = availableValues.length;
 	const MIN_VALUE = availableValues[0];
@@ -54,6 +52,8 @@ const SecondExercise = ({ availableValues = [] }) => {
 		const slider = [];
 		let minThumb = null;
 		let maxThumb = null;
+		const { innerWidth } = window;
+		const UNIT = innerWidth * 0.006;
 
 		for (
 			let i = Math.floor(availableValues[0]);
