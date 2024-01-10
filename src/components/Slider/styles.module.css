@@ -1,13 +1,13 @@
 .sliderThumb {
 	position: absolute;
-	background-color: gray;
+	background-color: #808080;
 	height: 20px;
 	width: 20px;
 	border-radius: 50%;
 	top: -3px;
 	touch-action: none;
 	transition: all 0.2s;
-    background-color: rgb(74, 74, 254);
+    background-color: #4a4afe;
     z-index: 9;
 }
 
@@ -18,4 +18,3 @@
 	margin-left: -5px;
     cursor: pointer;
 }
-

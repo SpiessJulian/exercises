@@ -40,6 +40,7 @@ const FirstExercise = ({ minValue, maxValue }) => {
 			if (slot <= start) return;
 			setEnd(slot);
 		}
+
 		setCurrentSlider(null);
 	};
 
@@ -87,7 +88,6 @@ const FirstExercise = ({ minValue, maxValue }) => {
 					data-testid={i}
 					data-slot={i}
 					onDragOver={onDragOver}
-					onTouchMove={() => null}
 					onTouchEnd={onDrop}
 					onDrop={onDrop}
 					key={i}
@@ -153,12 +153,12 @@ const FirstExercise = ({ minValue, maxValue }) => {
 							</button>
 						</div>
 					) : (
-						<span
+						<h3
 							className={styles.priceSelected}
 							onClick={handleStartEditMinValue}
 						>
 							${start}
-						</span>
+						</h3>
 					)}
 				</form>
 				<div className={styles.sliderContainer}>
@@ -184,12 +184,12 @@ const FirstExercise = ({ minValue, maxValue }) => {
 							</button>
 						</div>
 					) : (
-						<span
+						<h3
 							className={styles.priceSelected}
 							onClick={handleStartEditMaxValue}
 						>
 							${end}
-						</span>
+						</h3>
 					)}
 				</form>
 			</div>
