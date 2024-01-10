@@ -153,12 +153,13 @@ const FirstExercise = ({ minValue, maxValue }) => {
 							</button>
 						</div>
 					) : (
-						<h3
+						<button
+							aria-label="Edit minimum price"
 							className={styles.priceSelected}
 							onClick={handleStartEditMinValue}
 						>
 							${start}
-						</h3>
+						</button>
 					)}
 				</form>
 				<div className={styles.sliderContainer}>
@@ -184,12 +185,13 @@ const FirstExercise = ({ minValue, maxValue }) => {
 							</button>
 						</div>
 					) : (
-						<h3
+						<button
+							aria-label="Edit maximum price"
 							className={styles.priceSelected}
 							onClick={handleStartEditMaxValue}
 						>
 							${end}
-						</h3>
+						</button>
 					)}
 				</form>
 			</div>

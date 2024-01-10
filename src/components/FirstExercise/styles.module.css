@@ -60,6 +60,10 @@
 
 .priceSelected {
 	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	font-size: 20px;
+	font-weight: bold;
 	transition: all .2s ease-in-out;
 }
 
@@ -81,16 +85,15 @@
 
 .editBtn {
 	border-radius: 99px;
-	background-color: #4a4afe;
-	color: #ffffff;
+	background-color: transparent;
+	color: #4a4afe;
+	border-color: #4a4afe;
 	text-transform: uppercase;
 	box-shadow: none;
 	transition: all .2s ease-in-out;
 }
 
 .editBtn:hover {
-	background-color: transparent;
-	color: #4a4afe;
-	text-transform: uppercase;
-	border-color: #4a4afe;
+	background-color: #4a4afe;
+	color: #ffffff;
 }
