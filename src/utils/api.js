@@ -1,5 +1,7 @@
+import { URL } from "../constants/url";
+
 export const getMinMaxValues = async () => {
-    const url = 'http://demo6691984.mockable.io/min-max';
+    const url = URL.FIRST_EXERCISE;
     try {
         const res = await fetch(url);
         const data = await res.json();
@@ -12,7 +14,7 @@ export const getMinMaxValues = async () => {
 
 
 export const getFixedValues = async () => {
-    const url = 'http://demo6691984.mockable.io/fixed';
+    const url = URL.SECOND_EXERCISE;
     try {
         const res = await fetch(url);
         const data = await res.json();
