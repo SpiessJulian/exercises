@@ -2,6 +2,18 @@
 const { test, expect } = require('@playwright/test');
 
 test.describe('First Exercise', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.route('http://demo6691984.mockable.io/min-max', async route => {
+      const json = { min: 10, max: 50 };
+      await route.fulfill({ json });
+    });
+
+    await page.route('http://demo6691984.mockable.io/fixed', async route => {
+      const json = [1.99, 5.99, 10.99, 30.99, 50.99, 70.99];
+      await route.fulfill({ json });
+    });
+  });
+
   test('should show page header', async ({ page }) => {
     await page.goto('http://localhost:8080/');
   
