@@ -57,3 +57,31 @@
     width: 20px;
 	background-color: rgb(140, 140, 249);
 }
+
+.priceSelected {
+	cursor: pointer;
+	transition: all .2s ease-in-out;
+}
+
+.priceSelected:hover {
+	font-size: 22px;
+}
+
+.priceEditionContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.priceInput {
+	margin-top: 30px;
+	min-height: 25px;
+	border-radius: 5px;
+}
+
+.editBtn {
+	border-radius: 5px;
+	background-color: rgb(74, 74, 254);
+	color: white;
+	text-transform: uppercase;
+}

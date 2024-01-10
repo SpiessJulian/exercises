@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import clsx from "clsx";
 import Slider from "../Slider";
 import styles from "./styles.module.css";
 
@@ -88,7 +87,7 @@ const SecondExercise = ({ availableValues = [] }) => {
 			let lineClass = styles.line;
 
 			if (i >= start && i < end) {
-				lineClass = clsx(lineClass, styles.lineSelected);
+				lineClass = `${lineClass} ${styles.lineSelected}`;
 			}
 
 			slider.push(

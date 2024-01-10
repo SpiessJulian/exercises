@@ -82,7 +82,7 @@ describe("FirstExercise", () => {
         expect(screen.getByRole('textbox')).toHaveAttribute('value', '50');
     });
 
-    it('should change the current min value on manual edition', () => {
+    it('should change the current min value on manual edition by pressing enter', () => {
         render(<FirstExercise minValue={10} maxValue={50} />);
 
         const minPrice = screen.getByText("$10");
@@ -98,7 +98,7 @@ describe("FirstExercise", () => {
         expect(screen.getByText('$20')).toBeInTheDocument();
     });
 
-    it('should change the current max value on manual edition', () => {
+    it('should change the current max value on manual edition by pressing enter', () => {
         render(<FirstExercise minValue={10} maxValue={50} />);
 
         const maxPrice = screen.getByText("$50");
@@ -113,6 +113,38 @@ describe("FirstExercise", () => {
 
         expect(screen.getByText('$30')).toBeInTheDocument();
     });
+
+    it('should change the current min value on manual edition by clicking the button', () => {
+        render(<FirstExercise minValue={10} maxValue={50} />);
+
+        const minPrice = screen.getByText("$10");
+
+        fireEvent.click(minPrice);
+
+        const textbox = screen.getByRole('textbox');
+
+        fireEvent.change(textbox, { target: { value: '20' } });
+
+        fireEvent.click(screen.getByRole('button'));
+
+        expect(screen.getByText('$20')).toBeInTheDocument();
+    });
+
+    it('should change the current max value on manual edition by clicking the button', () => {
+        render(<FirstExercise minValue={10} maxValue={50} />);
+
+        const maxPrice = screen.getByText("$50");
+
+        fireEvent.click(maxPrice);
+
+        const textbox = screen.getByRole('textbox');
+
+        fireEvent.change(textbox, { target: { value: '30' } });
+
+        fireEvent.click(screen.getByRole('button'));
+
+        expect(screen.getByText('$30')).toBeInTheDocument();
+    });    
 
     it('should return the min slider to the previous position if the new target is out of bounds', async () => {
         render(<FirstExercise minValue={10} maxValue={50} />);

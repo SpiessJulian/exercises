@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import clsx from "clsx";
 import Slider from "../Slider";
 import styles from "./styles.module.css";
 
@@ -79,7 +78,7 @@ const FirstExercise = ({ minValue, maxValue }) => {
 			let lineClass = styles.line;
 
 			if (i >= start && i < end) {
-				lineClass = clsx(lineClass, styles.lineSelected);
+				lineClass = `${lineClass} ${styles.lineSelected}`;
 			}
 			slider.push(
 				<div
@@ -133,38 +132,62 @@ const FirstExercise = ({ minValue, maxValue }) => {
 			<h1>First Exercise</h1>
 
 			<div className={styles.container}>
-				<form
-					onClick={handleStartEditMinValue}
-					onSubmit={handleEndEditMinValue}
-				>
+				<form onSubmit={handleEndEditMinValue}>
 					{startEdit ? (
-						<input
-							role="textbox"
-							type="number"
-							value={startEditValue}
-							onChange={(e) => setStartEditValue(Number(e.target.value))}
-						/>
+						<div className={styles.priceEditionContainer}>
+							<input
+								role="textbox"
+								type="number"
+								value={startEditValue}
+								onChange={(e) => setStartEditValue(Number(e.target.value))}
+								className={styles.priceInput}
+							/>
+							<button
+								aria-label="Edit"
+								className={styles.editBtn}
+								type="submit"
+							>
+								Edit
+							</button>
+						</div>
 					) : (
-						`$${start}`
+						<span
+							className={styles.priceSelected}
+							onClick={handleStartEditMinValue}
+						>
+							${start}
+						</span>
 					)}
 				</form>
 				<div className={styles.sliderContainer}>
 					<div className={styles.sliderScale}>{scaleBlocks}</div>
 					<div className={styles.slider}>{sliderBlocks}</div>
 				</div>
-				<form
-					onClick={handleStartEditMaxValue}
-					onSubmit={handleEndEditMaxValue}
-				>
+				<form onSubmit={handleEndEditMaxValue}>
 					{endEdit ? (
-						<input
-							role="textbox"
-							type="number"
-							value={endEditValue}
-							onChange={(e) => setEndEditValue(Number(e.target.value))}
-						/>
+						<div className={styles.priceEditionContainer}>
+							<input
+								role="textbox"
+								type="number"
+								value={endEditValue}
+								onChange={(e) => setEndEditValue(Number(e.target.value))}
+								className={styles.priceInput}
+							/>
+							<button
+								aria-label="Edit"
+								className={styles.editBtn}
+								type="submit"
+							>
+								Edit
+							</button>
+						</div>
 					) : (
-						`$${end}`
+						<span
+							className={styles.priceSelected}
+							onClick={handleStartEditMaxValue}
+						>
+							${end}
+						</span>
 					)}
 				</form>
 			</div>
