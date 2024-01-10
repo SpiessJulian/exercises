@@ -6,7 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server ./src/",
     "build": "webpack ./src/",
-    "test": "jest"
+    "test": "jest",
+    "test:functional": "npx playwright test",
+    "test:functional:play": "start npm start && start npx playwright test"
   },
   "author": "David Julian Spiess",
   "license": "ISC",
