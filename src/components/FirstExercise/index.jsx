@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Slider from "../Slider";
+import { SliderType } from "../../constants/sliderType";
+import { Unit } from "../../constants/unit";
 import styles from "./styles.module.css";
 
 
@@ -31,10 +33,10 @@ const FirstExercise = ({ minValue, maxValue }) => {
 
 		if (isNaN(slot)) return;
 
-		if (currentSlider === "min") {
+		if (currentSlider === SliderType.MIN) {
 			if (slot >= end) return;
 			setStart(slot);
-		} else if (currentSlider === "max") {
+		} else if (currentSlider === SliderType.MAX) {
 			if (slot <= start) return;
 			setEnd(slot);
 		}
@@ -47,7 +49,7 @@ const FirstExercise = ({ minValue, maxValue }) => {
 		let minThumb = null;
 		let maxThumb = null;
 		const { innerWidth } = window;
-		const UNIT = innerWidth * 0.01;
+		const UNIT = innerWidth * Unit.FIRST_EX_UNIT_SCREEN_MULTIPLIER;
 
 		for (let i = MIN_VALUE; i <= MAX_VALUE; i++) {
 			let label = "";
@@ -67,9 +69,9 @@ const FirstExercise = ({ minValue, maxValue }) => {
 			);
 
 			if (i === start) {
-				minThumb = <Slider onDragStart={onDragStart} name="min" />;
+				minThumb = <Slider onDragStart={onDragStart} name={SliderType.MIN} />;
 			} else if (i === end) {
-				maxThumb = <Slider onDragStart={onDragStart} name="max" />;
+				maxThumb = <Slider onDragStart={onDragStart} name={SliderType.MAX} />;
 			} else {
 				minThumb = null;
 				maxThumb = null;

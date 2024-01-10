@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Slider from "../Slider";
+import { SliderType } from "../../constants/sliderType";
+import { Unit } from "../../constants/unit";
 import styles from "./styles.module.css";
 
 const SecondExercise = ({ availableValues = [] }) => {
@@ -26,7 +28,7 @@ const SecondExercise = ({ availableValues = [] }) => {
 
 		if (isNaN(slot)) return;
 
-		if (currentSlider === "min") {
+		if (currentSlider === SliderType.MIN) {
 			if (slot >= end) return;
 			const closest = availableValues.reduce(function (prev, curr) {
 				return Math.abs(curr - slot) < Math.abs(prev - slot)
@@ -34,7 +36,7 @@ const SecondExercise = ({ availableValues = [] }) => {
 					: prev;
 			});
 			setStart(closest);
-		} else if (currentSlider === "max") {
+		} else if (currentSlider === SliderType.MAX) {
 			if (slot <= start) return;
 			const closest = availableValues.reduce(function (prev, curr) {
 				return Math.abs(curr - slot) < Math.abs(prev - slot)
@@ -52,7 +54,7 @@ const SecondExercise = ({ availableValues = [] }) => {
 		let minThumb = null;
 		let maxThumb = null;
 		const { innerWidth } = window;
-		const UNIT = innerWidth * 0.006;
+		const UNIT = innerWidth * Unit.SECOND_EX_UNIT_SCREEN_MULTIPLIER;
 
 		for (
 			let i = Math.floor(availableValues[0]);
@@ -76,9 +78,9 @@ const SecondExercise = ({ availableValues = [] }) => {
 			);
 
 			if (i === Math.floor(start)) {
-				minThumb = <Slider onDragStart={onDragStart} name="min" />;
+				minThumb = <Slider onDragStart={onDragStart} name={SliderType.MIN} />;
 			} else if (i === Math.floor(end)) {
-				maxThumb = <Slider onDragStart={onDragStart} name="max" />;
+				maxThumb = <Slider onDragStart={onDragStart} name={SliderType.MAX} />;
 			} else {
 				minThumb = null;
 				maxThumb = null;
