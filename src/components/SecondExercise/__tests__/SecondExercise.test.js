@@ -15,7 +15,7 @@ describe('SecondExercise', () => {
     
         expect(screen.getByText('Fixed values Slider')).toBeInTheDocument();
     });
-    
+
     it('should show min and max values as initial values on load', () => {
         render(<SecondExercise availableValues={[10, 20, 30, 40]}/>);
 

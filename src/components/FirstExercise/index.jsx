@@ -69,9 +69,9 @@ const FirstExercise = ({ minValue, maxValue }) => {
 				</div>
 			);
 
-			if (i === start) {
+			if (i === Math.floor(start)) {
 				minThumb = <Slider onDragStart={onDragStart} name={SliderType.MIN} />;
-			} else if (i === end) {
+			} else if (i === Math.floor(end)) {
 				maxThumb = <Slider onDragStart={onDragStart} name={SliderType.MAX} />;
 			} else {
 				minThumb = null;
@@ -141,6 +141,7 @@ const FirstExercise = ({ minValue, maxValue }) => {
 								aria-label="Price"
 								role="textbox"
 								type="number"
+								step="0.01"
 								value={startEditValue}
 								onChange={(e) => setStartEditValue(Number(e.target.value))}
 								className={styles.priceInput}
@@ -176,6 +177,7 @@ const FirstExercise = ({ minValue, maxValue }) => {
 								aria-label="Price"
 								role="textbox"
 								type="number"
+								step="0.01"
 								value={endEditValue}
 								onChange={(e) => setEndEditValue(Number(e.target.value))}
 								className={styles.priceInput}
