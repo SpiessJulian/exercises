@@ -138,6 +138,7 @@ const FirstExercise = ({ minValue, maxValue }) => {
 					{startEdit ? (
 						<div className={styles.priceEditionContainer}>
 							<input
+								aria-label="Price"
 								role="textbox"
 								type="number"
 								value={startEditValue}
@@ -154,9 +155,11 @@ const FirstExercise = ({ minValue, maxValue }) => {
 						</div>
 					) : (
 						<h3
+							tabindex="1"
 							aria-label="Edit minimum price"
 							className={styles.priceSelected}
 							onClick={handleStartEditMinValue}
+							onKeyDown={e => e.key === 'Enter' ? handleStartEditMinValue() : null}
 						>
 							{`$${start}`}
 						</h3>
@@ -170,6 +173,7 @@ const FirstExercise = ({ minValue, maxValue }) => {
 					{endEdit ? (
 						<div className={styles.priceEditionContainer}>
 							<input
+								aria-label="Price"
 								role="textbox"
 								type="number"
 								value={endEditValue}
@@ -186,9 +190,11 @@ const FirstExercise = ({ minValue, maxValue }) => {
 						</div>
 					) : (
 						<h3
+							tabindex="2"
 							aria-label="Edit maximum price"
 							className={styles.priceSelected}
 							onClick={handleStartEditMaxValue}
+							onKeyDown={e => e.key === 'Enter' ? handleStartEditMaxValue() : null}
 						>
 							{`$${end}`}
 						</h3>
