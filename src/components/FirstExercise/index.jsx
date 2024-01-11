@@ -156,7 +156,7 @@ const FirstExercise = ({ minValue, maxValue }) => {
 						</div>
 					) : (
 						<h3
-							tabindex="1"
+							tabIndex="1"
 							aria-label="Edit minimum price"
 							className={styles.priceSelected}
 							onClick={handleStartEditMinValue}
@@ -192,7 +192,7 @@ const FirstExercise = ({ minValue, maxValue }) => {
 						</div>
 					) : (
 						<h3
-							tabindex="2"
+							tabIndex="2"
 							aria-label="Edit maximum price"
 							className={styles.priceSelected}
 							onClick={handleStartEditMaxValue}

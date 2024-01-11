@@ -1,0 +1,22 @@
+.navbarContainer {
+    width: 100%;
+    height: 80px;
+    background-color: #4a4afe;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    justify-content: flex-end;
+}
+
+.navbarItem {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-right: 30px;
+    font-weight: bold;
+}
+
+.navbarItem:hover {
+    transform: scale(1.3);
+    transition: all .2s ease-in-out;
+}   
