@@ -118,8 +118,8 @@ const SecondExercise = ({ availableValues = [] }) => {
 
 	return (
 		<div>
-			<h1>Second Exercise</h1>
-
+			<h1 className={styles.header}>Second Exercise</h1>
+			<h2 className={styles.subheader}>Fixed values Slider</h2>
 			<div className={styles.container}>
 				<h3>
 					${start}

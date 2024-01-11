@@ -131,8 +131,8 @@ const FirstExercise = ({ minValue, maxValue }) => {
 
 	return (
 		<div>
-			<h1>First Exercise</h1>
-
+			<h1 className={styles.header}>First Exercise</h1>
+			<h2 className={styles.subheader}>Min/Max Slider</h2>
 			<div className={styles.container}>
 				<form onSubmit={handleEndEditMinValue}>
 					{startEdit ? (

@@ -7,7 +7,13 @@ describe('SecondExercise', () => {
     it('should render the header', () => {
         render(<SecondExercise availableValues={[10, 20, 30, 40]}/>);
     
-        expect(screen.getByText('Second Exercise')).toBeInTheDocument()
+        expect(screen.getByText('Second Exercise')).toBeInTheDocument();
+    });
+
+    it('should render the subheader', () => {
+        render(<SecondExercise availableValues={[10, 20, 30, 40]}/>);
+    
+        expect(screen.getByText('Fixed values Slider')).toBeInTheDocument();
     });
     
     it('should show min and max values as initial values on load', () => {

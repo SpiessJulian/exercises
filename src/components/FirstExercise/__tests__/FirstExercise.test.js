@@ -9,6 +9,12 @@ describe("FirstExercise", () => {
 		expect(screen.getByText("First Exercise")).toBeInTheDocument();
 	});
 
+    it("should render the subheader", () => {
+		render(<FirstExercise minValue={10} maxValue={50} />);
+
+		expect(screen.getByText("Min/Max Slider")).toBeInTheDocument();
+	});
+
 	it("should show min and max values on load", () => {
 		render(<FirstExercise minValue={12} maxValue={75} />);
 
