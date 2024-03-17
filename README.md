@@ -29,3 +29,6 @@ Or if a specific terminal is needed, start the server with `npm run dev` in one 
 
 ## Author
 David Julian Spiess
+
+## Test
+this is a test
